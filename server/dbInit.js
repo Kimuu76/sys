@@ -6,7 +6,7 @@ require("./models"); // Ensure models are loaded before syncing
 
 const initDB = async () => {
 	try {
-		await sequelize.sync({ force: true }); // Updates schema without dropping data
+		await sequelize.sync({ alter: true }); // Updates schema without dropping data
 		console.log("Database initialized successfully!");
 	} catch (error) {
 		console.error("DB Initialization Error:", error);
