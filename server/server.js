@@ -11,7 +11,7 @@ const sequelize = require("./database");
 const { Op } = require("sequelize");
 const moment = require("moment");
 const models = require("./models");
-const initializeDB = require("./dbInit");
+const initDB = require("./dbInit");
 const { Product } = require("./models");
 const { Purchase } = require("./models");
 const { Supplier } = require("./models");
@@ -23,7 +23,7 @@ const { Company } = require("./models");
 dotenv.config();
 const app = express();
 
-initializeDB();
+initDB();
 
 app.use(
 	cors({

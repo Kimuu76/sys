@@ -15,7 +15,7 @@ const initDB = async () => {
 	}
 };
 
-initDB();
+module.exports = initDB;
 
 /** @format 
 
