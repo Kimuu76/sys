@@ -8,6 +8,13 @@ const initDB = async () => {
 	try {
 		await sequelize.sync({ alter: true }); // Updates schema without dropping data
 		console.log("Database initialized successfully!");
+
+		// Ensure proper sync order
+		await Product.sync();
+		await Supplier.sync();
+		await Purchase.sync();
+
+		console.log("✅ Tables synced successfully!");
 	} catch (error) {
 		console.error("DB Initialization Error:", error);
 	} finally {
