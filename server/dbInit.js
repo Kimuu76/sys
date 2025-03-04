@@ -17,8 +17,6 @@ const initDB = async () => {
 		console.log("✅ Tables synced successfully!");
 	} catch (error) {
 		console.error("DB Initialization Error:", error);
-	} finally {
-		await sequelize.close(); // Close connection after initialization
 	}
 };
 
